@@ -12,5 +12,14 @@ public class SocialMediaApp {
 		user_ob.remove(user_);
 	}
 
+	public void displayAllUsers() {
+		for(User user: user_ob) {
+			System.out.println(user.username);
+		}
+	}
 	
+	public void displayUserPosts(String username) {
+		RegularUser u = new RegularUser(username, username);
+		u.displayPost();
+	}
 }
