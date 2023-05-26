@@ -4,10 +4,11 @@ public class RegularUser extends User {
 	
 	protected ArrayList<String> postlist = new ArrayList<String>();
 	
-	public RegularUser(String username, String Ppassword) {
-		super(username, Ppassword);
+	public RegularUser(String username, String password) {
+		super(username, password);
 		// TODO Auto-generated constructor stub
 	}
+	
 
 
 	@Override

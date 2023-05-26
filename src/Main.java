@@ -15,29 +15,39 @@ public class Main {
 		
 		SocialMediaApp my_app = new SocialMediaApp();
 		Scanner input = new Scanner(System.in);
-//		String username = input.nextLine();
-//		String password = input.nextLine();
-//		RegularUser user = new RegularUser(username,password);
 		
-		System.out.println("Please, choose an option");
-		System.out.print("1--- For adding new user.\n"
-				+ "2--- For romoving a user.\n"+
-				"3--- Display the profile information of all users.\n"+
-				"4--- Add posts to regular user accounts\n"+"5--- Display the posts of a specific user.\n"+
-				"6--- Like posts.\n"+"7--- Unlike posts.\n"+"Any key to terminate.\n");
+		System.out.print("Enter username : ");
+		String username = input.nextLine();
+		System.out.print("Enter password : ");
+		String password = input.nextLine();
+		User user = new RegularUser(username,password);
+		System.out.print("Enter username : ");
+		String username1 = input.nextLine();
+		System.out.print("Enter password : ");
+		String password1 = input.nextLine();
+		User user2 = new RegularUser(username1,password1);
+		my_app.addUser(user);
+		System.out.println("User added successfully!");
+				
+		my_app.removeUser(user2);
+		System.out.println("User "+username1+" added successfully!");
 		
-		int choice = input.nextInt();
-		while(true) {
-			switch(choice) {
-			case 1:
-				String username = input.nextLine();
-				String password = input.nextLine();
-				User user = new RegularUser(username,password);
-				my_app.addUser(user);
-			}
-		}
-		
-		
-		
+		System.out.println("404 user not found!");
+				
+		my_app.displayAllUsers();
+				
+		RegularUser ruser = new RegularUser(username,password);
+		String post = input.nextLine();
+		ruser.addPost(post);
+				
+		my_app.displayUserPosts(username);
+			
+		String post1 = input.nextLine();
+		Post userpost = new Post(post1,0);
+			
+		userpost.like();
+		System.out.println(userpost.likeCount());	
+		userpost.unlike();
+		System.out.println(userpost.likeCount());
 	}
 }

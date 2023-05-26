@@ -22,5 +22,7 @@ public class Post implements ILikable{
 		return like;
 	}
 	
-	
+	public int likeCount() {
+		return like;
+	}
 }
